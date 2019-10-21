@@ -1,0 +1,23 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href='{% static "base.css" %}'>
+    <script src="{% static 'base.js' %}" defer></script>
+    <title>TRENDING</title>
+</head>
+<div id="top_container_create">
+    <a class="home" href="{% url 'latest_entries' %}">
+        <div>HOME</div>
+    </a>
+    <H1>CREATE POST</H1>
+    <form class="create" action="{% url "create_entry" %}" method="POST">
+    {% csrf_token %}
+    <label> <input type="text" name="content" placeholder="CLICK ENTER TO POST" required> </label>
+</form>
+</div>

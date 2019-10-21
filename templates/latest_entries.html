@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href='{% static "base.css" %}'>
+    <script src="{% static 'base.js' %}" defer></script>
+    <title>Christian G</title>
+</head>
+
+<body>
+    <header> World's Best Blogs </header>
+    <div class="top-choice">
+        <div class="top_entries">
+            <a href="{% url 'top_entries' %}">
+                <div class="feature" id="trending_button">TRENDING</div>
+            </a>
+        </div>
+
+        <div class="feature" id="create_button">
+            <a href='new'>
+                <div id="create_new">CREATE POST</div>
+            </a>
+        </div>
+    </div>
+    <div id="entry-choice-container">
+        <h1>TODAYS POSTS</h1>
+        <div class="feature" id="latest_entries_container">
+            {% for entry in entries %}
+            <div id="latest_entry_info">
+                <div id="id"> # {{entry.id}} - {{entry.created_at}} </div>
+                <div class="entry_info" id="entry_content"> {{entry.content}}</div>
+                <div class="entry_info"> {{entry.likes}}<button id="like_button">❤️</button></div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</body>
+
+</html>

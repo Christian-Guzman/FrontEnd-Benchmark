@@ -35,7 +35,7 @@ The backend exposes 6 URLs, but you only really care about 4 of them:
   to least recent. Your page should:
   - Display the `content` and `likes` for each `Entry`.
   - Display a link to `entries/create`.
-  - Display a "Like" button that uses `fetch` to make a `POST` request to
+  * - Display a "Like" button that uses `fetch` to make a `POST` request to
     `entries/<int:id>/like`. When the response gets back from the server,
     update the DOM to reflect the updated `likes`.
 - `entries/top` is exactly the same as `entries/` but it uses a template named
